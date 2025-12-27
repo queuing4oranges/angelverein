@@ -1,0 +1,26 @@
+---
+import "../styles/main.scss";
+import Sidebar from "../components/Sidebar.astro";
+const { title = "Anglerverband" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <title>{title}</title>
+    </head>
+
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <h2>Anglerverband</h2>
+                <Sidebar />
+            </aside>
+
+            <main class="content">
+                <slot />
+            </main>
+        </div>
+    </body>
+</html>
