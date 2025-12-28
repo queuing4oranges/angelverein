@@ -1,6 +1,6 @@
 ---
-import "../styles/main.scss";
-import Sidebar from "../components/Sidebar.astro";
+import "../styles/global.scss";
+import Header from "../components/Header.astro";
 const { title = "Anglerverband" } = Astro.props;
 ---
 
@@ -13,10 +13,12 @@ const { title = "Anglerverband" } = Astro.props;
 
     <body>
         <div class="layout">
-            <aside class="sidebar">
-                <h2>Anglerverband</h2>
-                <Sidebar />
-            </aside>
+            <h1 class="text-xl font-bold text-blue-600">
+                Tailwind is working 🚀
+            </h1>
+            <header class="header">
+                <Header />
+            </header>
 
             <main class="content">
                 <slot />

@@ -1,50 +1,52 @@
-* {
-  box-sizing: border-box;
-}
+@import '../styles/global.scss' 
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #f6f7f4;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
-.layout {
-  display: flex;
-  min-height: 100vh;
-}
+// body {
+//   margin: 0;
+//   font-family: system-ui, sans-serif;
+//   background: #f6f7f4;
+// }
 
-.sidebar {
-  width: 240px;
-  background: #2f4f2f;
-  color: white;
-  padding: 1rem;
+// .layout {
+//   display: flex;
+//   min-height: 100vh;
+// }
+
+// .sidebar {
+//   width: 240px;
+//   background: #2f4f2f;
+//   color: white;
+//   padding: 1rem;
   
-  h2 {
-    margin-top: 0;
-    font-size: 1.2rem;
-  }
+//   h2 {
+//     margin-top: 0;
+//     font-size: 1.2rem;
+//   }
   
-  ul {
-    list-style: none;
-    padding: 0;
-  }
+//   ul {
+//     list-style: none;
+//     padding: 0;
+//   }
   
-  li {
-    margin: 0.5rem 0;
-  }
+//   li {
+//     margin: 0.5rem 0;
+//   }
   
-  a {
-    color: white;
-    text-decoration: none;
+//   a {
+//     color: white;
+//     text-decoration: none;
     
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+// }
 
-.content {
-  flex: 1;
-  padding: 2rem;
-  background: white;
-}
+// .content {
+//   flex: 1;
+//   padding: 2rem;
+//   background: white;
+// }
