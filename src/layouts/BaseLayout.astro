@@ -19,39 +19,31 @@ const pathname = Astro.url.pathname;
     </head>
 
     <body class="bg-gray-100 text-gray-900">
-        <!-- HEADER -->
         <Header />
         <Hero />
-        <div>
-            <Jugend />
-        </div>
-        <div>
-            <Links />
-        </div>
-        <div>
-            <Kontakt />
-        </div>
+        <Links />
 
         <!-- PAGE CONTENT -->
         <!-- <main class="max-w-5xl mx-auto px-6 py-8">
             {
                 pathname.startsWith("/berichte/") && (
-                    <div class="mb-4">
-                        <a
-                            href="/berichte"
-                            class="text-sm text-blue-600 hover:underline"
-                        >
-                            ← Zurück zu den Berichten
-                        </a>
+                <div class="mb-4">
+                    <a
+                    href="/berichte"
+                    class="text-sm text-blue-600 hover:underline"
+                    >
+                    ← Zurück zu den Berichten
+                    </a>
                     </div>
-                )
-            }
+                    )
+                    }
 
-
-            <div class="bg-white rounded-lg shadow p-6">
-                <slot />
-            </div>
-        </main> -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <slot />
+                        </div>
+                        </main> -->
+        <Jugend />
+        <Kontakt />
         <footer>
             <Footer />
         </footer>
