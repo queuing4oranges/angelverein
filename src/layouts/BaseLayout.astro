@@ -1,7 +1,14 @@
 ---
 import "../styles/global.scss";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Jugend from "../components/Jugend.astro";
+import Links from "../components/Links.astro";
+import Kontakt from "../components/Kontakt.astro";
+import Hero from "../components/Hero.astro";
+
 const { title = "Anglerverband" } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -11,18 +18,42 @@ const { title = "Anglerverband" } = Astro.props;
         <title>{title}</title>
     </head>
 
-    <body>
-        <div class="layout">
-            <h1 class="text-xl font-bold text-blue-600">
-                Tailwind is working 🚀
-            </h1>
-            <header class="header">
-                <Header />
-            </header>
-
-            <main class="content">
-                <slot />
-            </main>
+    <body class="bg-gray-100 text-gray-900">
+        <!-- HEADER -->
+        <Header />
+        <Hero />
+        <div>
+            <Jugend />
         </div>
+        <div>
+            <Links />
+        </div>
+        <div>
+            <Kontakt />
+        </div>
+
+        <!-- PAGE CONTENT -->
+        <!-- <main class="max-w-5xl mx-auto px-6 py-8">
+            {
+                pathname.startsWith("/berichte/") && (
+                    <div class="mb-4">
+                        <a
+                            href="/berichte"
+                            class="text-sm text-blue-600 hover:underline"
+                        >
+                            ← Zurück zu den Berichten
+                        </a>
+                    </div>
+                )
+            }
+
+
+            <div class="bg-white rounded-lg shadow p-6">
+                <slot />
+            </div>
+        </main> -->
+        <footer>
+            <Footer />
+        </footer>
     </body>
 </html>

@@ -2,3 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    --font-sans: "Montserrat", sans-serif;
+    --font-mono:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    --spacing: 0.25rem;
+    --breakpoint-sm: 640px;
+    --breakpoint-xl: 1180px;
+    --container-lg: 32rem;
+    --container-6xl: 72rem;
+    --text-xs: 14px;
+    --text-xs--line-height: 1.5;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25/0.875);
+    --text-base: 16px;
+    --text-base--line-height: 1.5;
+    --text-lg: 17px;
+    --text-lg--line-height: 1.5;
+    --text-xl: 18px;
+    --text-xl--line-height: 1.5;
+    --text-2xl: 20px;
+    --text-2xl--line-height: 1.5;
+    --text-3xl: 25px;
+    --text-3xl--line-height: 1.5;
+    --text-4xl: 30px;
+    --text-4xl--line-height: 1.5;
+    --text-6xl: 40px;
+    --text-6xl--line-height: 1.5;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --radius-sm: 0.25rem;
+    --radius-lg: 0.5rem;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-spin: spin 1s linear infinite;
+    --default-transition-duration: 0.15s;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+    --text-xxs: 12px;
+    --text-xxs--line-height: 1.5;
+        // --color-orange: #d16900;
+        // --color-lvsa-gray: #666;
+        // --color-lvsa-gray-semi-light: #dbdbdb;
+        // --color-lvsa-gray-light: #f0f0f0;
+        // --color-lvsa-gray-lighter: #f4f4f4;
+        // --color-color-lvsa: #60962d;
+        // --color-color-lvsa-light: #edf5de;
+        // --color-color-lvsa-footer: #86bc26;
+        // --color-color-lvsa-footer-dark: #b2d187;
+        // --color-color-lvsa-footer-light: #c7e09e;
+        // --color-color-avs: #0b6a00;
+        // --color-color-avs-light: #dae9d9;
+        // --color-color-avs-footer-dark: #c5dcc3;
+        // --color-color-ave: #005b83;
+        // --color-color-ave-light: #d9e6ec;
+        // --color-color-ave-footer-dark: #c3d8e1;
+        // --color-color-avl: #2f3f88;
+        // --color-color-avl-light: #e0e2ed;
+        // --color-color-avl-footer-dark: #cdd1e3;
+    --drop-shadow-3xl: 0 2px 2px #000000bf;
+    --spacing-0: 0px;
+    --spacing-30: 7.5rem;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: 1.5;
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+    font-family: Montserrat, sans-serif;
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+    );
+    box-sizing: border-box;
+    border: 0 solid;
+    padding: 0;
+    position: relative;
+    margin: auto;
+    max-width: var(--breakpoint-xl);
+    transition-property: height;
+    --tw-duration: 0.5s;
+    transition-duration: 0.5s;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+}
