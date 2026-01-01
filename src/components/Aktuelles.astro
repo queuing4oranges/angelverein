@@ -1,58 +1,68 @@
 ---
 import { getCollection } from "astro:content";
 const posts = await getCollection("aktuelles");
+const firstPosts = posts.slice(0, 5);
 ---
 
 <section id="aktuelles" class="py-16 px-4">
-    <h2 class="text-3xl font-bold mb-6">Aktuelles</h2>
+    <h2 class="text-3xl font-bold mb-6">Aktuelle Informationen</h2>
 
-    <ul class="grid md:grid-cols-4 grid-cols-1 gap-4">
+    <ul class="grid grid-cols-1">
         {
-            posts.map(async (post) => {
-                return (
-                    <li class="md:h-82 xl:h-[353px] h-auto border hover:bg-white transition-all">
-                        <div class="mt-3 h-full w-full px-5 pb-4">
-                            <div class="grid h-full grid-rows-[1fr_3fr] gap-2">
-                                {/* TITLE */}
-                                <h3 class="m-0 !text-[15px] !font-medium !leading-[1.2rem] overflow-hidden">
-                                    {post.data.titel}
-                                </h3>
-
-                                {/* KURZTEXT */}
-                                <p class="overflow-hidden">
-                                    {post.data.kurztext}
-                                </p>
-
-                                {/* WEITERLESEN BUTTON */}
-                                <a
-                                    href={`/aktuelles/${post.slug}`}
-                                    class="sm:text-lg text-sm uppercase text-color-lvsa flex flex-row items-center hover:underline"
-                                >
-                                    Weiterlesen
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke-width={1.5}
-                                        stroke="currentColor"
-                                        class="size-6"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                );
-            })
+            firstPosts &&
+                firstPosts.map(async (post) => {
+                    return (
+                        <li class="h-auto hover:bg-white transition-all mb-2">
+                            <a href={`/aktuelles/${post.slug}`}>
+                                <div class="h-full w-full p-4 flex flex-col sm:flex-row">
+                                    <time class="text-gray-500 sm:w-[100px] sm:pr-5">
+                                        {post.data.datum.toLocaleDateString(
+                                            "de-DE",
+                                        )}
+                                    </time>
+                                    <div class="sm:ml-5 mt-1 sm:mt-0 flex w-full items-center justify-between">
+                                        <h3 class="flex-1">
+                                            {post.data.titel}
+                                        </h3>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6 hidden sm:block"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    );
+                })
         }
     </ul>
 
-    <a href="/aktuelles" class="mehr-link"><span>MEHR...</span></a>
+    <a href="/aktuelles" class="mehr-link flex flex-row items-center">
+        <span class="mr-3">mehr...</span>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width={1.5}
+            stroke="currentColor"
+            class="size-6"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+        </svg>
+    </a>
 </section>
 
 <style>
@@ -68,8 +78,17 @@ const posts = await getCollection("aktuelles");
         background-color: white;
     }
 
-    #aktuelles .mehr-link span {
-        margin-top: 5rem;
-        border: 2px solid pink;
+    #aktuelles time {
+        border-right: 2px var(--color-brown) solid;
+    }
+
+    #aktuelles .mehr-link {
+        font-size: 1.5em;
+    }
+
+    @media (max-width: 676px) {
+        #aktuelles time {
+            border: none;
+        }
     }
 </style>

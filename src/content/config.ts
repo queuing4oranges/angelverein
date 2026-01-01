@@ -9,13 +9,14 @@ const aktuelles = defineCollection({
     }),
 });
 
-// const berichte = defineCollection({
-//     type: "content",
-//     schema: z.object({
-//         title: z.string(),
-//         date: z.date(),
-//     }),
-// });
+const berichte = defineCollection({
+    type: "content",
+    schema: z.object({
+        titel: z.string(),
+        datum: z.date(),
+        kurztext: z.string().optional(),
+    }),
+});
 
 // const veranstaltungen = defineCollection({
 //     type: "content",
@@ -27,5 +28,6 @@ const aktuelles = defineCollection({
 // });
 
 export const collections = {
-    aktuelles
+    aktuelles,
+    berichte
 };

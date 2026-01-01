@@ -7,6 +7,7 @@ import Links from "../components/Links.astro";
 import Kontakt from "../components/Kontakt.astro";
 import Hero from "../components/Hero.astro";
 import Aktuelles from "../components/Aktuelles.astro";
+import Berichte from "../components/Berichte.astro";
 
 const { title = "Anglerverband" } = Astro.props;
 ---
@@ -15,6 +16,7 @@ const { title = "Anglerverband" } = Astro.props;
 <html lang="de">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
     </head>
 
@@ -24,6 +26,7 @@ const { title = "Anglerverband" } = Astro.props;
         <Aktuelles />
         <Links />
         <Jugend />
+        <Berichte />
         <Kontakt />
         <Footer />
     </body>

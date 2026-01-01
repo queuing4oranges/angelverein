@@ -20,7 +20,7 @@
                     fetchpriority="auto"
                     width="400"
                     height="266"
-                    class="absolute h-full w-full object-cover items-center"
+                    class="absolute h-full w-full object-cover object-right md:hidden"
                 />
                 <img
                     src="/images/hero-image.webp"
@@ -30,7 +30,7 @@
                     fetchpriority="auto"
                     width="1200"
                     height="799"
-                    class="absolute h-full w-full object-cover object-top items-center"
+                    class="absolute hidden md:block h-full w-full object-cover object-top"
                 />
                 <div class="absolute top-0 h-full w-full bg-black opacity-20">
                 </div>
@@ -65,5 +65,9 @@
         --tw-ease: var(--ease-in-out);
         transition-timing-function: var(--ease-in-out);
         height: 600px;
+    }
+
+    #hero-content .object-right {
+        object-position: right;
     }
 </style>
