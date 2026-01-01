@@ -64,10 +64,12 @@ const sortedPosts = posts.sort((a,b) => b.data.datum.valueOf() - a.data.datum.va
 
     .aktuelles-list li {
         background-color: var(--color-light-blue);
+        border: 1px white solid;
     }
 
     .aktuelles-list li:hover {
         background-color: white;
+        border: 1px var(--color-light-blue) solid;
     }
 
     .aktuelles-list time {
