@@ -18,16 +18,18 @@ const berichte = defineCollection({
     }),
 });
 
-// const veranstaltungen = defineCollection({
-//     type: "content",
-//     schema: z.object({
-//         title: z.string(),
-//         date: z.date(),
-//         location: z.string(),
-//     }),
-// });
+const termine = defineCollection({
+    type: "content",
+    schema: z.object({
+        titel: z.string(),
+        datum: z.date(),
+        zeit: z.string(),
+        location: z.string(),
+    }),
+});
 
 export const collections = {
     aktuelles,
-    berichte
+    berichte,
+    termine
 };

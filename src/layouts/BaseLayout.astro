@@ -8,6 +8,7 @@ import Kontakt from "../components/Kontakt.astro";
 import Hero from "../components/Hero.astro";
 import Aktuelles from "../components/Aktuelles.astro";
 import Berichte from "../components/Berichte.astro";
+import Termine from "../components/Termine.astro";
 
 const { title = "Anglerverband" } = Astro.props;
 ---
@@ -27,10 +28,19 @@ const { title = "Anglerverband" } = Astro.props;
             <slot />
         </main>
         <Aktuelles />
-        <Links />
+        <div class="termine-links-container grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-6">
+            <Termine />
+            <Links />
+        </div>
         <Jugend />
         <Berichte />
         <Kontakt />
         <Footer />
     </body>
 </html>
+
+<style>
+    .termine-links-container {
+        margin-bottom: 2rem;
+    }
+</style>

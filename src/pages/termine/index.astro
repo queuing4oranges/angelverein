@@ -1,0 +1,132 @@
+---
+import "../../styles/global.scss";
+import { getCollection } from "astro:content";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+
+const posts = await getCollection("termine");
+const sortedPosts = posts.sort(
+    (a, b) => b.data.datum.valueOf() - a.data.datum.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <ArticleHeader />
+        <section class="termine-list max-w-3xl mx-auto py-16 px-6">
+            <h2 class="text-3xl font-bold mb-6">Termine</h2>
+
+            <ul class="space-y-4">
+                {
+                    sortedPosts &&
+                        sortedPosts.map((post) => (
+                            <li class="h-auto transition-all mb-2">
+                                <a
+                                    class="relative block h-auto min-h-32 flex-col justify-between border-b p-5 first:border-t xs:p-5"
+                                    href={`/termine/${post.slug}`}
+                                >
+                                    <h3 class="max-w-full overflow-hidden text-base font-medium">
+                                        {post.data.titel}
+                                    </h3>
+                                    <div class="mt-4 flex flex-row">
+                                        <div class="flex items-stretch items-center">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="white"
+                                                class="size-6 mr-2"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                                                />
+                                            </svg>
+                                            <div class="datum xs:text-xs">
+                                                <time class="sm:w-[100px] sm:pr-5">
+                                                    {post.data.datum.toLocaleDateString(
+                                                        "de-DE",
+                                                    )}
+                                                </time>
+                                            </div>
+                                        </div>
+                                        <div class="ml-3 flex items-stretch">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="white"
+                                                class="size-6 mr-2"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                                />
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                                />
+                                            </svg>
+                                            <span class="text-lvsa-gray xs:text-xs">
+                                                {post.data.location}
+                                            </span>
+                                        </div>
+                                        <div class="ml-auto flex items-stretch">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="white"
+                                                class="size-6"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        ))
+                }
+            </ul>
+        </section>
+    </body>
+</html>
+
+<style>
+    .termine-list h3 {
+        font-weight: bold !important;
+    }
+
+    .termine-list li {
+        background-color: var(--color-flag-blue);
+        border: 1px white solid;
+    }
+
+    .termine-list li:hover {
+        opacity: 0.9;
+    }
+
+    .termine-list .mehr-link {
+        font-size: 1.5em;
+    }
+
+    #termine li:hover {
+    }
+
+    .termine-list .datum {
+        line-height: 1.6;
+    }
+</style>
