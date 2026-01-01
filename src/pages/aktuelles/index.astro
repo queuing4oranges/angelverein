@@ -1,0 +1,86 @@
+---
+import "../../styles/global.scss";
+import { getCollection } from "astro:content";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+
+const posts = await getCollection("aktuelles");
+const sortedPosts = posts.sort((a,b) => b.data.datum.valueOf() - a.data.datum.valueOf());
+---
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <ArticleHeader />
+        <section class="aktuelles-list max-w-3xl mx-auto py-16 px-6">
+            <h2 class="text-3xl font-bold mb-6">Aktuelle Informationen</h2>
+
+            <ul class="space-y-4">
+                {
+                    sortedPosts && sortedPosts.map((post) => (
+                        <li class="h-auto hover:bg-white transition-all mb-2">
+                            <a href={`/aktuelles/${post.slug}`}>
+                                <div class="h-full w-full p-4 flex flex-col sm:flex-row">
+                                    <time class="text-gray-500 sm:w-[100px] sm:pr-5">
+                                        {post.data.datum.toLocaleDateString(
+                                            "de-DE",
+                                        )}
+                                    </time>
+                                    <div class="sm:ml-5 mt-1 sm:mt-0 flex w-full items-center justify-between">
+                                        <h3 class="flex-1">
+                                            {post.data.titel}
+                                        </h3>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="size-6 hidden sm:block"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </body>
+</html>
+
+<style>
+    .aktuelles-list h3 {
+        font-weight: bold !important;
+    }
+
+    .aktuelles-list li {
+        background-color: var(--color-light-blue);
+    }
+
+    .aktuelles-list li:hover {
+        background-color: white;
+    }
+
+    .aktuelles-list time {
+        border-right: 2px var(--color-brown) solid;
+    }
+
+    .aktuelles-list .mehr-link {
+        font-size: 1.5em;
+    }
+
+    @media (max-width: 676px) {
+        .aktuelles-list time {
+            border: none;
+        }
+    }
+</style>

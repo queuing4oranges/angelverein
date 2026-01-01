@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 const posts = await getCollection("aktuelles");
-const firstPosts = posts.slice(0, 5);
+const sortedPosts = posts.sort((a,b) => b.data.datum.valueOf() - a.data.datum.valueOf());
+const firstPosts = sortedPosts.slice(0, 5);
 ---
 
 <section id="aktuelles" class="py-16 px-4">

@@ -6,7 +6,13 @@
                 <div
                     class="relative flex w-full items-center justify-end md:justify-start"
                 >
-                    <a href="/">Zurück</a>
+                    <a
+                        class="hover:bg-white"
+                        href="#"
+                        onclick="window.history.back(); return false;"
+                    >
+                        Zurück
+                    </a>
                 </div>
             </div>
         </div>
@@ -23,5 +29,10 @@
 
     header a {
         color: var(--color-light-blue);
+        padding: 0.5em;
+    }
+
+    header a:hover {
+        color: var(--color-dark-green);
     }
 </style>

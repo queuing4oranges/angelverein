@@ -23,6 +23,9 @@ const { title = "Anglerverband" } = Astro.props;
     <body class="bg-gray-100 text-gray-900">
         <Header />
         <Hero />
+        <main>
+            <slot />
+        </main>
         <Aktuelles />
         <Links />
         <Jugend />
