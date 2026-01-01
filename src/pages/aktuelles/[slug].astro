@@ -1,0 +1,40 @@
+---
+import "../../styles/global.scss";
+import { getCollection } from "astro:content";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+
+// getStaticPaths tells Astro all possible slugs
+export async function getStaticPaths() {
+    const posts = await getCollection("aktuelles");
+
+    return posts.map((post) => ({
+        params: { slug: post.slug }, // slug comes from filename or frontmatter
+        props: { post }, // optional: can pass the post directly
+    }));
+}
+
+// post is available via props
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <ArticleHeader />
+        <article class="max-w-3xl mx-auto py-16 px-6">
+            <time class="block text-gray-500 mb-6">
+                {post.data.datum.toLocaleDateString("de-DE")}
+            </time>
+            <h1 class="text-3xl font-bold mb-4">{post.data.titel}</h1>
+
+            <div class="prose prose-lg">
+                <Content />
+            </div>
+        </article>
+    </body>
+</html>

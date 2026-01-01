@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+    font-family: "Montserrat", sans-serif;
     --font-sans: "Montserrat", sans-serif;
     --font-mono:
         ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -49,25 +50,14 @@ body {
     --default-mono-font-family: var(--font-mono);
     --text-xxs: 12px;
     --text-xxs--line-height: 1.5;
-        // --color-orange: #d16900;
-        // --color-lvsa-gray: #666;
-        // --color-lvsa-gray-semi-light: #dbdbdb;
-        // --color-lvsa-gray-light: #f0f0f0;
-        // --color-lvsa-gray-lighter: #f4f4f4;
-        // --color-color-lvsa: #60962d;
-        // --color-color-lvsa-light: #edf5de;
-        // --color-color-lvsa-footer: #86bc26;
-        // --color-color-lvsa-footer-dark: #b2d187;
-        // --color-color-lvsa-footer-light: #c7e09e;
-        // --color-color-avs: #0b6a00;
-        // --color-color-avs-light: #dae9d9;
-        // --color-color-avs-footer-dark: #c5dcc3;
-        // --color-color-ave: #005b83;
-        // --color-color-ave-light: #d9e6ec;
-        // --color-color-ave-footer-dark: #c3d8e1;
-        // --color-color-avl: #2f3f88;
-        // --color-color-avl-light: #e0e2ed;
-        // --color-color-avl-footer-dark: #cdd1e3;
+    
+    //custom colors
+    --color-dark-green: #1D373B;
+    --color-beige: #796E28;
+    --color-light-blue: #DAE4E5;
+    --color-brown: #5F4637;
+    --color-grey-blue: #546F72;
+
     --drop-shadow-3xl: 0 2px 2px #000000bf;
     --spacing-0: 0px;
     --spacing-30: 7.5rem;
@@ -98,4 +88,9 @@ body {
     transition-duration: 0.5s;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+    
+    h1, h2 {
+        text-transform: uppercase;
+        font-weight: 400 !important;
+    }
 }

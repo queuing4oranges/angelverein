@@ -6,46 +6,25 @@ import Jugend from "../components/Jugend.astro";
 import Links from "../components/Links.astro";
 import Kontakt from "../components/Kontakt.astro";
 import Hero from "../components/Hero.astro";
+import Aktuelles from "../components/Aktuelles.astro";
 
 const { title = "Anglerverband" } = Astro.props;
-const pathname = Astro.url.pathname;
 ---
 
 <!doctype html>
 <html lang="de">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8" />
         <title>{title}</title>
     </head>
 
     <body class="bg-gray-100 text-gray-900">
         <Header />
         <Hero />
+        <Aktuelles />
         <Links />
-
-        <!-- PAGE CONTENT -->
-        <!-- <main class="max-w-5xl mx-auto px-6 py-8">
-            {
-                pathname.startsWith("/berichte/") && (
-                <div class="mb-4">
-                    <a
-                    href="/berichte"
-                    class="text-sm text-blue-600 hover:underline"
-                    >
-                    ← Zurück zu den Berichten
-                    </a>
-                    </div>
-                    )
-                    }
-
-                    <div class="bg-white rounded-lg shadow p-6">
-                        <slot />
-                        </div>
-                        </main> -->
         <Jugend />
         <Kontakt />
-        <footer>
-            <Footer />
-        </footer>
+        <Footer />
     </body>
 </html>

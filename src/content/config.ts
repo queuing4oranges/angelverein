@@ -1,10 +1,31 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
-// export const collections = {
-//     berichte: defineCollection({
-//         schema: z.object({
-//             title: z.string(),
-//             date: z.string(),
-//         }),
+const aktuelles = defineCollection({
+    type: "content",
+    schema: z.object({
+        titel: z.string(),
+        datum: z.date(),
+        kurztext: z.string().optional(),
+    }),
+});
+
+// const berichte = defineCollection({
+//     type: "content",
+//     schema: z.object({
+//         title: z.string(),
+//         date: z.date(),
 //     }),
-// };
+// });
+
+// const veranstaltungen = defineCollection({
+//     type: "content",
+//     schema: z.object({
+//         title: z.string(),
+//         date: z.date(),
+//         location: z.string(),
+//     }),
+// });
+
+export const collections = {
+    aktuelles
+};
