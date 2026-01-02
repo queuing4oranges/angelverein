@@ -1,11 +1,27 @@
 ---
 import "../../styles/global.scss";
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import ArticleHeader from "../../components/ArticleHeader.astro";
 
 const posts = await getCollection("berichte");
+
+// Sort newest first
 const sortedPosts = posts.sort(
     (a, b) => b.data.datum.valueOf() - a.data.datum.valueOf(),
+);
+
+// Group by year
+const postsByYear = sortedPosts.reduce<Record<number, CollectionEntry<"berichte">[]>>(
+    (acc, post) => {
+        const year = post.data.datum.getFullYear();
+
+        if (!acc[year]) acc[year] = [];
+        acc[year].push(post);
+
+        return acc;
+    },
+    {},
 );
 ---
 
@@ -19,7 +35,7 @@ const sortedPosts = posts.sort(
         <section class="berichte-list max-w-3xl mx-auto py-16 px-6">
             <h2 class="text-3xl font-bold mb-6">Berichte</h2>
 
-            <ul class="space-y-4">
+            <!-- <ul class="space-y-4">
                 {
                     sortedPosts &&
                         sortedPosts.map((post) => (
@@ -55,7 +71,28 @@ const sortedPosts = posts.sort(
                             </li>
                         ))
                 }
-            </ul>
+            </ul> -->
+
+            {
+                Object.entries(postsByYear).map(([year, yearPosts]) => (
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-semibold mb-4">{year}</h2>
+
+                        <ul class="space-y-3">
+                            {yearPosts.map((post) => (
+                                <li>
+                                    <a
+                                        href={`/berichte/${post.slug}`}
+                                        class="hover:underline"
+                                    >
+                                        {post.data.titel}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
         </section>
     </body>
 </html>
