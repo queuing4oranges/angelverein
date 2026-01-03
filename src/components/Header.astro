@@ -1,14 +1,14 @@
-<header class="section-container z-40 w-full sticky top-0 z-40">
+<header class="section-container absolute top-0 z-40 w-full relative overflow-visible">
     <div class="m-auto mx-auto xl:container xl:max-w-(--breakpoint-xl)">
         <div
-            class="z-30 flex h-20 w-full items-center justify-between lg:bg-white"
+            class="z-30 flex h-20 w-full items-center justify-end lg:bg-white"
         >
             <!-- Logo -->
-            <div class="flex items-center ml-6 md:ml-0">
-                <a href="/" title="Zurück zur Startseite" class="block">
+            <div class="absolute top-6 left-6 z-50">
+                <a href="/" title="Zurück zur Startseite">
                     <img
                         alt="Avl 95 Logo"
-                        class="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                        class="h-24 md:h-28 lg:h-32 w-auto object-contain"
                         loading="lazy"
                         src="/images/logo-homepage.png"
                     />
@@ -27,36 +27,39 @@
                             class="relative flex h-full md:space-x-5 lg:space-x-10 xl:space-x-10"
                         >
                             <div class="w-full overflow-visible">
-                                <button
+                                <a
+                                    href="#aktuelles"
                                     class="main-menu-button text-black relative inline-flex h-full items-center border-b-4 border-white text-lg font-medium transition-all hover:border-color-avl hover:text-color-avl"
                                 >
                                     Aktuelles
-                                </button>
-                            </div><div class="w-full overflow-visible">
-                                <button
-                                    class="main-menu-button text-black relative inline-flex h-full items-center border-b-4 border-white text-lg font-medium transition-all hover:border-color-avl hover:text-color-avl"
-                                >
-                                    Berichte
-                                </button>
-                            </div><div class="w-full overflow-visible">
-                                <button
-                                    class="main-menu-button text-black relative inline-flex h-full items-center border-b-4 border-white text-lg font-medium transition-all hover:border-color-avl hover:text-color-avl"
-                                >
-                                    Veranstaltungen
-                                </button>
+                                </a>
                             </div><div class="w-full overflow-visible">
                                 <a
+                                    href="#termine"
                                     class="main-menu-button text-black relative inline-flex h-full items-center border-b-4 border-white text-lg font-medium transition-all hover:border-color-avl hover:text-color-avl"
+                                >
+                                    Termine
+                                </a>
+                            </div><div class="w-full overflow-visible">
+                                <a
                                     href="#links"
+                                    class="main-menu-button text-black relative inline-flex h-full items-center border-b-4 border-white text-lg font-medium transition-all hover:border-color-avl hover:text-color-avl"
                                 >
                                     Links
                                 </a>
                             </div><div class="w-full overflow-visible">
                                 <a
+                                    href="#jugend"
                                     class="main-menu-button text-black relative inline-flex h-full items-center border-b-4 border-white text-lg font-medium transition-all hover:border-color-avl hover:text-color-avl"
-                                    href="#kontakt"
                                 >
-                                    Kontakt
+                                    Jugend
+                                </a>
+                            </div><div class="w-full overflow-visible">
+                                <a
+                                    href="#berichte"
+                                    class="main-menu-button text-black relative inline-flex h-full items-center border-b-4 border-white text-lg font-medium transition-all hover:border-color-avl hover:text-color-avl"
+                                >
+                                    Berichte
                                 </a>
                             </div>
                         </nav>
@@ -108,19 +111,10 @@
     header .main-menu-button:hover {
         border-bottom: 4px #162d30 solid;
     }
-</style>
 
-<!-- <nav>
-    <ul>
-        <li><a href="/">Startseite</a></li>
-        <li><a href="/aktuelles/">Aktuelles</a></li>
-        <li><a href="/berichte/">Berichte</a></li>
-        <li><a href="/jugend/">Jugend</a></li>
-        <li><a href="/veranstaltungen/">Veranstaltungen</a></li>
-        <li><a href="/lehrgangsinfo/">Lehrgangsinfo</a></li>
-        <li><a href="/links/">Links</a></li>
-        <li><a href="/wetter/">Wetter</a></li>
-        <li><a href="/kontakt/">Kontakt</a></li>
-        <li><a href="/impressum/">Impressum</a></li>
-    </ul>
-</nav> -->
+    @media(max-width: 676px) {
+        header {
+            background-image: none;
+        }
+    }
+</style>
