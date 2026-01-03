@@ -22,21 +22,21 @@ const { title = "Anglerverband" } = Astro.props;
     </head>
 
     <body class="bg-gray-100 text-gray-900">
-        <Header />
-        <Hero />
         <main>
+            <Header />
+            <Hero />
             <slot />
+            <Aktuelles />
+            <div
+                class="section-container termine-links-container grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-6"
+            >
+                <Termine />
+                <Links />
+            </div>
+            <Wetter />
+            <Jugend />
+            <Berichte />
         </main>
-        <Aktuelles />
-        <div
-            class="termine-links-container grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-6"
-        >
-            <Termine />
-            <Links />
-        </div>
-        <Wetter />
-        <Jugend />
-        <Berichte />
         <Footer />
     </body>
 </html>

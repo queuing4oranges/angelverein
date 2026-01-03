@@ -53,12 +53,12 @@ body {
     
     //custom colors
     --color-dark-green: #1D373B;
-    --color-beige: #796E28;
     --color-light-blue: #DAE4E5;
-    --color-brown: #5F4637;
     --color-grey-blue: #546F72;
-    --color-flag-blue: #6a90cd;
-    --color-fresh-green: #7FC8A9;
+    --color-beige: #C9C38A;
+    --color-brown: #B8A59A;
+    --color-flag-blue: #B6C9E6;
+    --color-fresh-green: #BFE6D4;
 
     --drop-shadow-3xl: 0 2px 2px #000000bf;
     --spacing-0: 0px;
@@ -83,8 +83,6 @@ body {
     border: 0 solid;
     padding: 0;
     position: relative;
-    margin: auto;
-    max-width: var(--breakpoint-xl);
     transition-property: height;
     --tw-duration: 0.5s;
     transition-duration: 0.5s;
@@ -94,5 +92,10 @@ body {
     h1, h2 {
         text-transform: uppercase;
         font-weight: 400 !important;
+    }
+
+    .section-container {
+        margin: auto;
+        max-width: var(--breakpoint-xl);
     }
 }
