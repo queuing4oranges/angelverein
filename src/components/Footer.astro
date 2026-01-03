@@ -1,3 +1,102 @@
-<div>
-    this is the footer
+<div class="footer">
+    <div class="section-container py-8 px-4 w-full">
+        <h2>Kontakt</h2>
+        <br />
+        <strong>Anglervereinigung Leipzig '95 e.V.</strong>
+        <ul>
+            <li>Ludwigsburger Strasse 1b, 04209 Leipzig</li>
+        </ul>
+        <div class="kontakt-content mt-6">
+            <div class="kontakt-col">
+                <ul>
+                    <li class="flex grid grid-cols-2 gap-1">
+                        <p>Telefon:</p>
+                        <p>0341 - 2270466</p>
+                    </li>
+                    <li class="flex grid grid-cols-2 gap-1">
+                        <p>Mobil:</p>
+                        <p>0176 - 62304237</p>
+                    </li>
+                    <li class="flex grid grid-cols-2 gap-1">
+                        <p>E-Mail:</p>
+                        <p>kontakt@avl-95.de</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="kontakt-col">
+                <ul>
+                    <li class="flex grid grid-cols-2 gap-1">
+                        <p>1. Vorsitzender:</p>
+                        <p>Michael Höhle</p>
+                    </li>
+                    <li class="flex grid grid-cols-2 gap-1">
+                        <p>Schatzmeisterin:</p>
+                        <p>Petra Grötzsch</p>
+                    </li>
+                    <li class="flex grid grid-cols-2 gap-1">
+                        <p>Amtsgericht:</p>
+                        <p>Amtsgericht Leipzig, VR2678</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="kontakt-col">
+                <ul>
+                    <li>
+                        Webdesign & Umsetzung:
+                        <br />
+                        <a
+                            href="https://www.linkedin.com/in/katja-zenker"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Katja Zenker
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-flag-blue);
+    padding: 2rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.footer .kontakt-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .kontakt-col {
+    max-width: 33%;
+}
+
+.footer .kontakt-col ul {
+    padding: 0;
+}
+
+.footer .kontakt-col li {
+    list-style: none;
+}
+
+.footer .kontakt-col a {
+    color: inherit;
+}
+
+@media (max-width: 992px) {
+    .footer .kontakt-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer .kontakt-col {
+        max-width: 100% !important;
+        margin-top: 2rem;
+    }
+}
+</style>
