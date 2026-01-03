@@ -1,31 +1,17 @@
-<header class="section-container z-40 w-full">
+<header class="section-container z-40 w-full sticky top-0 z-40">
     <div class="m-auto mx-auto xl:container xl:max-w-(--breakpoint-xl)">
         <div
-            class="z-30 flex h-20 w-full items-center justify-between lg:mt-2 lg:bg-white xl:mt-20"
+            class="z-30 flex h-20 w-full items-center justify-between lg:bg-white"
         >
             <!-- Logo -->
-            <div
-                class="z-40 ml-6 mt-3 justify-start
-                    xs:mt-0
-                    md:ml-0 md:mt-6
-                    lg:mt-0"
-            >
-                <a href="/" title="Zurück zur Startseite">
-                    <div
-                        class="relative z-10 transition-all
-                            h-32 mt-10
-                            md:h-36 md:mt-5
-                            lg:h-44 lg:top-5
-                            xl:h-60 xl:top-0 xl:left-7
-                            xs:mt-8"
-                    >
-                        <img
-                            alt="Avl Logo"
-                            class="h-full w-auto max-w-none"
-                            loading="lazy"
-                            src="images/logo-homepage.png"
-                        />
-                    </div>
+            <div class="flex items-center ml-6 md:ml-0">
+                <a href="/" title="Zurück zur Startseite" class="block">
+                    <img
+                        alt="Avl 95 Logo"
+                        class="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                        loading="lazy"
+                        src="/images/logo-homepage.png"
+                    />
                 </a>
             </div>
 
@@ -113,6 +99,10 @@
 <style>
     header {
         font-size: 17px !important;
+        background-image: url("/images/fish.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     header .main-menu-button:hover {

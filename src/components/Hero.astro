@@ -51,23 +51,30 @@
 </div>
 
 <style>
-    #hero-content {
-        box-sizing: border-box;
-        border: 0 solid;
-        padding: 0;
-        position: relative;
-        margin: auto;
-        max-width: var(--breakpoint-xl);
-        overflow: hidden;
-        transition-property: height;
-        --tw-duration: 0.5s;
-        transition-duration: 0.5s;
-        --tw-ease: var(--ease-in-out);
-        transition-timing-function: var(--ease-in-out);
-        height: 600px;
-    }
+#hero-content {
+    box-sizing: border-box;
+    border: 0 solid;
+    padding: 0;
+    position: relative;
+    margin: auto;
+    max-width: var(--breakpoint-xl);
+    overflow: hidden;
+    transition-property: height;
+    --tw-duration: 0.5s;
+    transition-duration: 0.5s;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+    height: 600px;
+}
 
-    #hero-content .object-right {
-        object-position: right;
-    }
+.hero {
+    background-image: url("/images/fish.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#hero-content .object-right {
+    object-position: right;
+}
 </style>
